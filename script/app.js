@@ -137,6 +137,7 @@ document.querySelector('#submit-modal').addEventListener('click',(e)=>{
   weather.changeLocation(city,country);
   getWeather(null,null);
   document.querySelector('#modal').classList.toggle("show-modal");
+  //modal needs to disappear after submit
   document.querySelector('#modal-content').classList.toggle("show-modal-content");
 
 });
