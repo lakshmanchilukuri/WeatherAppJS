@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherapp
+  </title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- use openweather api -->
+</head>
+
+<body>
+  <!-- <button id="location-btn">button</button>
+  <div id="demo">lcatinhere</div> -->
+  <div class="container">
+   
+
+    <div class="content-container">
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <div class="modal-flex">
+          <span class="close-button" id="close-modal">&times;</span>
+        </div>  
+          <label for="city">City </label>
+            <input type="text" id="city" class="input">
+        
+          
+            <label for="country">Country </label>
+            <input type="text" id="country" class="input">
+          
+          <button class="btn" id="submit-modal">submit</button> 
+        </div>
+  
+      </div>
+     
+      <div class="card card-top">
+        <div class="message" id="message"></div>
+        <div class="temp" id="temp-scale"><span class="temperature temp" id="temp"></span>&deg;<span class="scale temp"
+            id="scale">c</span></div>
+        <div class="desc"><span class="desc" id="desc-s"></span></div>
+      </div>
+
+     
+
+
+      <div class="card card-bottom">
+        <div class="cb cb1 flex">
+          <div class="city" id="change-location"><span id="location">Enter your city here</span></div>
+          <div class="description">
+            <img src="" id="icon">
+            <div class="flex-col">
+              <span>Feels like <span id="feels-like"></span>&deg;</span>
+              <span id="desc-l"></span></div>
+          </div>
+        </div>
+        <div class="cb cb2 ">
+          <ul class="details flex">
+            <li class="box"><span class="blk">Min</span><span id="min-temp"> </span>&deg;</li>
+            <li class="box"><span class="blk">Max</span><span id="max-temp"></span>&deg;</li>
+            <li class="box"><span class="blk">Pressure</span><span id="pressure"></span></li>
+            <li class="box"><span class="blk">Humidity</span><span id="humidity"></span>&percnt;</li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  
+
+  <script src='./script/weather.js'></script>
+  <script src='./script/ui.js'></script>
+  <script src='./script/app.js'></script>
+</body>
+
+</html>
