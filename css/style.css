@@ -159,7 +159,7 @@ margin:0px 0px 10px 0px;
   opacity: 1;
   visibility: visible;
   transform: scale(1.0);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  transition: visibility 0s linear 0s, opacity 0.1s 0s, transform 0.1s;
 }
 .modal-content {
   position: absolute;
