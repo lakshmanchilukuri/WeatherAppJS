@@ -33,7 +33,7 @@ padding: 20px;
 }
 
 .content-container{
-  /* position: relative; */
+  position: relative;
   width:100%;
   /* border:  1px solid red; */
   background: url('../images/blood.jpg') no-repeat center center/cover;
@@ -151,27 +151,43 @@ margin:0px 0px 10px 0px;
   background-color: rgba(0,0,0,0.4);
   /* display: none; */
  /* z-index: 1; */
- transform: scale(0.5);
+ /* transform: scale(0.5); */
  visibility: hidden;
  /* border-radius: 0.5rem; */
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 .show-modal {
   opacity: 1;
   visibility: visible;
   transform: scale(1.0);
-  transition: visibility 0s linear 0s, opacity 0.1s 0s, transform 0.1s;
+  /* transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; */
 }
 .modal-content {
   position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
+  /* margin: auto; */
+  /* top:35%;
+  left:5%;  */
+  /* transform: translate(-50%, -50%); */
   background-color: #fefefe;
   margin: auto;
   padding: 5px 20px 20px 20px;
   border: 1px solid #888;
   width: 20rem;
   border-radius: 0.2rem;
+  transform: scale(0.5);
+  visibility: hidden;
+}
+
+.show-modal-content{
+  
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  
+  /* transform: translate(-50%, -50%); */
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 /* .modal-content {

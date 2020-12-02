@@ -109,6 +109,9 @@ document.querySelector('#temp-scale').addEventListener('click', (e) => {
 document.querySelector('#change-location').addEventListener('click',(e)=>{
   console.log(e.target);
   document.querySelector('#modal').classList.toggle("show-modal");
+  console.log(document.querySelector('#modal-content').classList);
+  document.querySelector('#modal-content').classList.toggle("show-modal-content");
+  console.log(document.querySelector('#modal-content').classList);
 
 });
 
@@ -117,6 +120,9 @@ document.querySelector('#close-modal').addEventListener('click',(e)=>{
   // document.querySelector('#modal')
   console.log(e.target);
   document.querySelector('#modal').classList.toggle("show-modal");
+  console.log(document.querySelector('#modal-content').classList);
+  document.querySelector('#modal-content').classList.toggle("show-modal-content");
+  console.log(document.querySelector('#modal-content').classList);
 
 
 });
