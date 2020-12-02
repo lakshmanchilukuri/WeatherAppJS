@@ -36,7 +36,7 @@ padding: 20px;
   /* position: relative; */
   width:100%;
   /* border:  1px solid red; */
-  background: url('../images/blood.webp') no-repeat center center/cover;
+  background: url('../images/blood.jpg') no-repeat center center/cover;
   height: 100%;
   display: flex;
   flex-direction:column;
@@ -284,13 +284,13 @@ color: var(--light-color);
 
 
 .bg-image-primary{
-  background: url('../images/sun.webp') no-repeat center center/cover;
+  background: url('../images/sun.jpg') no-repeat center center/cover;
 }
 
 .bg-image-secondary{
-  background: url('../images/blood.webp') no-repeat center center/cover;
+  background: url('../images/blood.jpg') no-repeat center center/cover;
 }
 
 .bg-image-tertiary{
-  background: url('../images/moon.webp') no-repeat center center/cover;
+  background: url('../images/moon.jpg') no-repeat center center/cover;
  }
