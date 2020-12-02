@@ -30,8 +30,8 @@ class Weather {
     let p = await promise;
 
     let data = await p.json();
-
-
+    
+    console.log('raw data1 '+data.dt);
     return data;
 
   }
@@ -43,7 +43,7 @@ class Weather {
     let p = await promise;
 
     let data = await p.json();
-
+    console.log('raw data2 '+data);
 
     return data;
 
@@ -59,6 +59,7 @@ class Weather {
     }
          else 
        data=await this.getWeatherdatabyl(lat,long);
+       
     this.city = data.name;
     this.country = data.sys.country;
     this.temp = this.convertKelvinToCelsius(data.main.temp);

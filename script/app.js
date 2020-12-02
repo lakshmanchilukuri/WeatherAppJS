@@ -10,7 +10,11 @@ const submit=document.querySelector('.btn');
 document.addEventListener('DOMContentLoaded', () => {
   console.log('submit'+submit.classList);
 
-currentHour=19;
+currentHour=d.getHours();
+// console.log('date'+d+'cd '+currentHour);
+
+
+
   if(currentHour>7&&currentHour<16){
     console.log('sun');
 //sun
@@ -109,9 +113,10 @@ document.querySelector('#temp-scale').addEventListener('click', (e) => {
 document.querySelector('#change-location').addEventListener('click',(e)=>{
   console.log(e.target);
   document.querySelector('#modal').classList.toggle("show-modal");
-  console.log(document.querySelector('#modal-content').classList);
+  
   document.querySelector('#modal-content').classList.toggle("show-modal-content");
-  console.log(document.querySelector('#modal-content').classList);
+  document.querySelector('#city').value='';
+  document.querySelector('#country').value='';
 
 });
 
