@@ -1,5 +1,9 @@
 class UI{
 
+  // static container=document.querySelector('.content-container');
+  // static card=document.querySelector('.card-bottom');
+  // static submit=document.querySelector('.btn');
+
 constructor(){
 this.temp=document.querySelector('#temp');
 this.feels_like=document.querySelector('#feels-like');
@@ -15,6 +19,12 @@ this.min_temp=document.querySelector('#min-temp');
 this.max_temp=document.querySelector('#max-temp');
 this.pressure=document.querySelector('#pressure');
 this.humidity=document.querySelector('#humidity');
+
+this.container=document.querySelector('.content-container');
+this.card=document.querySelector('.card-bottom');
+this.submit=document.querySelector('.btn');
+
+
 }
 
 
@@ -34,6 +44,8 @@ this.feels_like.innerHTML=weather.feels_like;
 
 
 
+
+
 }
 
 
@@ -43,6 +55,61 @@ this.scale.innerHTML=data.scale;
 this.max_temp.innerHTML=data.temp.max_temp;
 this.min_temp.innerHTML=data.temp.min_temp;
 this.feels_like.textContent=data.temp.feels_like;
+}
+
+
+ updatebgImage(currentHour){
+  console.log('Current Hour'+currentHour);
+  // console.log(isNaN(currentHour))
+  
+  if(currentHour>7&&currentHour<16){
+    console.log('sun');
+//sun
+this.container.classList.remove('bg-image-secondary','bg-image-tertiary');
+this.container.classList.add('bg-image-primary');
+
+this.card.classList.remove('bgt-color-secondary','bgt-color-tertiary');
+this.card.classList.add('bgt-color-primary');
+
+this.submit.classList.remove('bg-color-secondary','bg-color-tertiary');
+this.submit.classList.add('bg-color-primary');
+
+  console.log(this.container.classList);
+  }
+  else if (currentHour>=16&&currentHour<19){
+    console.log('blood');
+//blood
+this.container.classList.remove('bg-image-primary','bg-image-tertiary');
+this.container.classList.add('bg-image-secondary');
+
+this.card.classList.remove('bgt-color-primary','bgt-color-tertiary');
+this.card.classList.add('bgt-color-secondary');
+
+this.submit.classList.remove('bg-color-primary','bg-color-tertiary');
+this.submit.classList.add('bg-color-secondary');
+
+// 
+
+console.log(this.container.classList)
+  }
+  else{
+    console.log('moon');
+
+    this.container.classList.remove('bg-image-primary','bg-image-secondary');
+this.container.classList.add('bg-image-tertiary');
+
+this.card.classList.remove('bgt-color-primary','bgt-color-secondary');
+this.card.classList.add('bgt-color-tertiary');
+
+this.submit.classList.remove('bg-color-primary','bg-color-secondary');
+this.submit.classList.add('bg-color-tertiary');
+
+
+    // this.container.classList.add('bg-image-tertiary');
+    // this.card.classList.add('bgt-color-tertiary');
+    // this.submit.classList.add('bg-color-tertiary');
+    console.log(this.container.classList)
+  }
 }
 
 

@@ -4,39 +4,9 @@ const weather = new Weather('London', 'UK');
 const message=document.querySelector('#message');
 const d=new Date();
 
-const container=document.querySelector('.content-container');
-const card=document.querySelector('.card-bottom');
-const submit=document.querySelector('.btn');
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('submit'+submit.classList);
-
-currentHour=d.getHours();
-// console.log('date'+d+'cd '+currentHour);
-
-
-
-  if(currentHour>7&&currentHour<16){
-    console.log('sun');
-//sun
-  container.classList.add('bg-image-primary');
-  card.classList.add('bgt-color-primary');
-  submit.classList.add('bg-color-primary');
-  
-  }
-  else if (currentHour>=16&&currentHour<19){
-    console.log('blood');
-//blood
-container.classList.add('bg-image-secondary');
-  card.classList.add('bgt-color-secondary');
-  submit.classList.add('bg-color-secondary');
-  }
-  else{
-    console.log('moon');
-    container.classList.add('bg-image-tertiary');
-    card.classList.add('bgt-color-tertiary');
-    submit.classList.add('bg-color-tertiary');
-  }
-  
+ 
 
   let message=document.querySelector('#message');
   let lat,long;
@@ -63,7 +33,11 @@ container.classList.add('bg-image-secondary');
 function getWeather(lat,long){
 weather.getWeather(lat,long).then(data => {
   message.innerHTML='';
+  const currentHour=weather.getcurrentHourbyTimeZone();
+  ui.updatebgImage(currentHour);
   ui.displayData(weather);
+
+
 
 }).catch(error => console.log(error));
 }

@@ -15,7 +15,7 @@ class Weather {
   icon;
   desc_s;
   desc_l;
-
+  timezone_offset;
   constructor(city, country) {
     this.#api_key = '5362bf90e4d52a08dc4aff58014b7d86';
     this.city = city;
@@ -31,7 +31,7 @@ class Weather {
 
     let data = await p.json();
     
-    console.log('raw data1 '+data.dt);
+    console.log('raw data1 '+data.timezone);
     return data;
 
   }
@@ -43,7 +43,7 @@ class Weather {
     let p = await promise;
 
     let data = await p.json();
-    console.log('raw data2 '+data);
+    console.log('raw data2 '+data.timezone);
 
     return data;
 
@@ -59,7 +59,7 @@ class Weather {
     }
          else 
        data=await this.getWeatherdatabyl(lat,long);
-       
+    this.timezone_offset=data.timezone;   
     this.city = data.name;
     this.country = data.sys.country;
     this.temp = this.convertKelvinToCelsius(data.main.temp);
@@ -71,6 +71,10 @@ class Weather {
     this.desc_s = data.weather[0].main;
     this.desc_l = data.weather[0].description;
     this.feels_like = this.convertKelvinToCelsius(data.main.feels_like);
+
+    // const currentHour=this.getcurrentHourbyTimeZone();
+    // UI.updatebgImage(currentHour);
+
 
   }
 
@@ -114,4 +118,31 @@ class Weather {
 
   }
 
+
+
+   getcurrentHourbyTimeZone(){
+    var mydate = new Date();
+  // ET timezone offset in hours.
+  console.log('timezone '+this.timezone_offset);
+    var timezone = Math.floor(this.timezone_offset/60);
+    // Timezone offset in minutes + the desired offset in minutes, converted to ms.
+    // This offset should be the same for ALL date calculations, so you should only need to calculate it once.
+    var offset = (mydate.getTimezoneOffset() + timezone) * 60 * 1000;
+    
+    // Use the timestamp and offset as necessary to calculate min/sec etc, i.e. for countdowns.
+    var timestamp = mydate.getTime() + offset,
+        seconds = Math.floor(timestamp / 1000) % 60,
+        minutes = Math.floor(timestamp / 1000 / 60) % 60,
+        hours   = Math.floor(timestamp / 1000 / 60 / 60);
+    
+    // Or update the timestamp to reflect the timezone offset.
+    mydate.setTime(mydate.getTime() + offset);
+    // Then Output dates and times using the normal methods.
+    // var date = mydate.getDate(),
+     let   hour = mydate.getHours();
+
+        return hour;
+  }
+
 }
+
